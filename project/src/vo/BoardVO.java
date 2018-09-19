@@ -15,6 +15,7 @@ public class BoardVO{
     private int ref;
     private int re_step;	
     private int re_level;
+    private int test;
 
 	public void setNum(int num){
     	this.num=num;
