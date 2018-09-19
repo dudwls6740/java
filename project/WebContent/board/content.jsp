@@ -10,19 +10,17 @@
 </head>
 
 <%
-	int num = Integer.parseInt(request.getParameter("num"));
-   String pageNum = request.getParameter("pageNum");
-
    SimpleDateFormat sdf = 
         new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
    try{
-      BoardDAO dbPro = BoardDAO.getInstance();
-      BoardVO article =  dbPro.getArticle(num);
+      String pageNum = (String)request.getAttribute("pageNum");
+      BoardVO article = (BoardVO)request.getAttribute("article");
   
 	  int ref=article.getRef();
 	  int re_step=article.getRe_step();
 	  int re_level=article.getRe_level();
+	  int num = article.getNum();
 %>
 <body bgcolor="<%=bodyback_c%>">  
 <center><b>글내용 보기</b>

@@ -79,7 +79,7 @@
 	  <img src="images/level.gif" width="<%=wid%>" height="16">
 	<%}%>
            
-      <a href="content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
+      <a href="boardContent.bo?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
            <%=article.getSubject()%></a> 
           <% if(article.getReadcount()>=20){%>
          <img src="images/hot.gif" border="0"  height="16"><%}%> 

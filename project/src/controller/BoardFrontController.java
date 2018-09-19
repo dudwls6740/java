@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.BoardContentAction;
 import action.BoardListAction;
 import action.BoardWriteFormAction;
 import action.BoardWriteProAction;
@@ -73,10 +74,15 @@ public class BoardFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
-		
-		
-		
+		else if(command.equals("/boardContent.bo")) {
+			action = new BoardContentAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		if(forward != null) {
 			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getUrl());
